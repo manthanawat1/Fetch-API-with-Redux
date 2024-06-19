@@ -56,11 +56,11 @@ const ProductCard: React.FC<IProduct> = ({
           width={100}
           height={100}
           onError={() => setFallbackImage(true)}
-          priority={true}
+          loading="lazy"
           style={{
             width: "100%",
             height: "100%",
-            objectFit: "contain",
+            objectFit: "cover",
           }}
         />
       </div>
