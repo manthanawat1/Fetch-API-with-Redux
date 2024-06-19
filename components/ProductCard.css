@@ -1,0 +1,9 @@
+.detail-product-container {
+  height: calc(100% - 15rem);
+}
+
+@media (max-width: 40em) {
+  .detail-product-container {
+    height: unset;
+  }
+}
