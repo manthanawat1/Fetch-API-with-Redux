@@ -58,6 +58,7 @@ const mapProductsData = (products: IProduct[]) => {
 const initialState = {
   products: [],
   productTotal: 0,
+  loading: false,
 } as IStateStore;
 
 const productSlice = createSlice({
@@ -65,10 +66,18 @@ const productSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers(builder) {
-    builder.addCase(fetchProducts.fulfilled, (state, action) => {
-      state.products.push(...action.payload[0]);
-      state.productTotal = action.payload[1];
-    });
+    builder
+      .addCase(fetchProducts.fulfilled, (state, action) => {
+        state.products.push(...action.payload[0]);
+        state.productTotal = action.payload[1];
+        state.loading = false;
+      })
+      .addCase(fetchProducts.rejected, (state) => {
+        state.loading = false;
+      })
+      .addCase(fetchProducts.pending, (state) => {
+        state.loading = true;
+      });
   },
 });
 

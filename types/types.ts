@@ -12,6 +12,7 @@ export interface IProduct {
 export interface IStateStore {
   products: IProduct[];
   productTotal: number;
+  loading: boolean;
 }
 
 export interface IFetchProducts {

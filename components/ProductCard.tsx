@@ -47,7 +47,7 @@ const ProductCard: React.FC<IProduct> = ({
   };
 
   return (
-    <div className="border-2 border-[#f5f5f5">
+    <div className="border-2 border-[#f5f5f5]">
       <div className="h-[20rem] sm:h-[15rem] w-full relative">
         <Image
           alt={`${title}-${description}`}
